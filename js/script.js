@@ -1,56 +1,30 @@
-// Arrays are not primitive 
-// They are refrence types
-const fruits = [
-    "Apple", "Banana", "Cherry", "Date", "Elderberry",
-    "Fig", "Grape", "Honeydew", "Kiwi", "Lemon",
-    "Mango", "Nectarine", "Orange", "Papaya", "Quince",
-    "Raspberry", "Strawberry", "Tangerine", "Ugli fruit", "Vanilla bean",
-    "Watermelon", "Xigua", "Yellow passion fruit", "Zucchini", "Blackberry",
-    "Cantaloupe", "Dragon fruit", "Jackfruit", "Lychee", "Mulberry",
-    "Olive", "Peach", "Pineapple", "Pomegranate", "Starfruit",
-    "Tamarind", "Coconut", "Durian", "Persimmon", "Gooseberry",
-    "Cranberry", "Apricot", "Soursop", "Custard apple"];
-const data = ['Adonis', 'Zepeda', 24, '555 coding dr', '777-777-7777', ['hiking', 'fishing']];
+const names = ['Izzy', 'Matt', 'City', 'Kandyce']
 
-const fullName ='Adonis Zepeda';
-
-for (let index = 0; index < fullName.length; index++) {
-    console.log(fullName[index]);
-
+function  printnames() {
+    //Loop over the names array and print out each name to the console
+    for (let index = 0; index < names.length; index ++){
+        console.log(names[index]);
+    }
+    
 }
 
 
 
-// for (let count = 1; count <= 10; count++) {
-//     console.log(count);
 
+function add(num1, num2) { 
+    return num1 + num2;
+}
+
+const result = add(3, 10);
+
+console.log(result)
+//if you put a 10 and 5 here, they'll be sent back to the function, like the tubes in bank
+// add (10, 5); 
+// add (20, 100);
+// add (50, 5);
+
+// function printvals(str, bool, num, arr) {
+//     console.log(arr[1]);
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let fullname = 'Adonis';
-
-// console.log(fullname);
-
-// fullname = fullname + 'Zepeda';
-
-// console.log fullname
+// printvals('some string', true, 15, ['Michael', 'Nina', 'Roman']);
