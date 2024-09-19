@@ -1,30 +1,29 @@
-const names = ['Izzy', 'Matt', 'City', 'Kandyce']
+const notes = ['JS is cool', 'create a constant with const', 'use the src attribute on the script tag to load a js file'];
 
-function  printnames() {
-    //Loop over the names array and print out each name to the console
-    for (let index = 0; index < names.length; index ++){
-        console.log(names[index]);
-    }
-    
-}
+console.log(notes);
 
+// push adds item to the end of the array
+notes.push('Copilot is a great help!');
 
+console.log(notes);
+// unhshift adds item to he beggining of the array
+notes.unshift('CSS is crazy');
 
+console.log(notes);
 
-function add(num1, num2) { 
-    return num1 + num2;
-}
+// pop removes the last item in the array
+notes.pop();
 
-const result = add(3, 10);
+console.log(notes);
 
-console.log(result)
-//if you put a 10 and 5 here, they'll be sent back to the function, like the tubes in bank
-// add (10, 5); 
-// add (20, 100);
-// add (50, 5);
+//shift removes the first item from the array
+notes.shift();
 
-// function printvals(str, bool, num, arr) {
-//     console.log(arr[1]);
-// }
+console.log(notes);
 
-// printvals('some string', true, 15, ['Michael', 'Nina', 'Roman']);
+const notes2 = notes;
+// Splice to remove item at certain index
+//you pass in the index of where you want to start deleting items and then the amount of items you want to remove
+notes2.splice(1, 2);
+
+console.log(notes2);
