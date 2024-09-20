@@ -1,29 +1,49 @@
-const notes = ['JS is cool', 'create a constant with const', 'use the src attribute on the script tag to load a js file'];
+const userdata = {
+    name: 'AZ',
+    age: 24,
+    phone: '777-777-7777',
+    address: '555 coding st',
+    info: {
+        location: 'Atlanta area',
+        hobbies: ['pickleball', 'fishing']
+    },
+    printage: function () {
+        console.log(this.age);
+    },
+    havebirthday: function() {
+        //increase age og user by one 
+        this.age++;
+        // and print happy bday to the console
+        console.log('Happy Birthday!')
+    },
+    addhobby: function(hobby) {
+        // need to refrence an argument that is passed to addhobby (string of a hobby)
+        
+        //push the argument (hobby) to the info. hobbies array
+        this.info.hobbies.push(hobby)
+    },
+    printhobbies: function () {
+        //console.log the hobbies array
+        console.log(this.info.hobbies);
+        //BONUS - LOOP over the hobbies array and console.log each hobby
+        // for (let i = 0; i < this.info.hobbies.length; i++) {
+        //     console.log(this.info.hobbies[i]);
+        // }
 
-console.log(notes);
+        for (let hobby of this.info.hobbies) {
+            console.log(hobby);
+        }
+    }
+};
 
-// push adds item to the end of the array
-notes.push('Copilot is a great help!');
+userdata.addhobby('tennis');
+userdata.addhobby('coding');
+userdata.addhobby('golf');
+userdata.addhobby('hiking');
 
-console.log(notes);
-// unhshift adds item to he beggining of the array
-notes.unshift('CSS is crazy');
+userdata.printhobbies();
+// userdata.printage();
 
-console.log(notes);
+// userdata.havebirthday();
 
-// pop removes the last item in the array
-notes.pop();
-
-console.log(notes);
-
-//shift removes the first item from the array
-notes.shift();
-
-console.log(notes);
-
-const notes2 = notes;
-// Splice to remove item at certain index
-//you pass in the index of where you want to start deleting items and then the amount of items you want to remove
-notes2.splice(1, 2);
-
-console.log(notes2);
+// userdata.printage();
