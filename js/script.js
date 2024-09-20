@@ -1,49 +1,61 @@
-const userdata = {
-    name: 'AZ',
-    age: 24,
-    phone: '777-777-7777',
-    address: '555 coding st',
-    info: {
-        location: 'Atlanta area',
-        hobbies: ['pickleball', 'fishing']
-    },
-    printage: function () {
-        console.log(this.age);
-    },
-    havebirthday: function() {
-        //increase age og user by one 
-        this.age++;
-        // and print happy bday to the console
-        console.log('Happy Birthday!')
-    },
-    addhobby: function(hobby) {
-        // need to refrence an argument that is passed to addhobby (string of a hobby)
-        
-        //push the argument (hobby) to the info. hobbies array
-        this.info.hobbies.push(hobby)
-    },
-    printhobbies: function () {
-        //console.log the hobbies array
-        console.log(this.info.hobbies);
-        //BONUS - LOOP over the hobbies array and console.log each hobby
-        // for (let i = 0; i < this.info.hobbies.length; i++) {
-        //     console.log(this.info.hobbies[i]);
-        // }
+const header = document.querySelector('h1');
+const paragraph = document.querySelector('.special-paragraph');
+const image = document.querySelector('#main-image');
+const noteoutput = document.querySelector('.output');
+const timerdisplay = document.querySelector('#time');
+const timerbtn = document.querySelector('#start-btn');
+// console.log(header.innerText);
+// console.log(paragraph.innerText);
+header.classList.add('crazy');
 
-        for (let hobby of this.info.hobbies) {
-            console.log(hobby);
+header.style.textDecoration = 'underline';
+
+// //Triversal Example
+// console.log(document.children[0].children[1].children);
+// image.setAttribute('src', 'https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg')
+
+// Insterting a new article element into the output section (INSERT adds)
+noteoutput.insertAdjacentHTML('beforeend', `
+    <article>
+    <h3>New note text</h3>
+    <p>Added on: 9/20/2024</p>
+    </article>
+    `);
+
+//INNER replaces 
+// noteoutput.innerHTML = `
+//     <article>
+//     <h3>New note text</h3>
+//     <p>Added on: 9/20/2024</p>
+//     </article>
+//     `;
+
+//Timers
+// const setInterval = window.setInterval;
+// setTimeout(function() {
+//     console.log('time up!');
+// }, 10000);
+let count = 10;
+let started = false;
+
+timerbtn.addEventListener('click', function () {
+    // console.log('clicked');
+    if (!started) {
+        const timer = setInterval(function () {
+        count--;
+
+        timerdisplay.innerText = 'Time:' + count;
+
+        if (count <= 0) {
+        // console.log('reached zero');
+        clearInterval(timer);
+        timerdisplay.innerText = 'Time: 10';
+        count = 10;
+        started = false;
         }
+    }, 1000);
+
+    started = true;
     }
-};
 
-userdata.addhobby('tennis');
-userdata.addhobby('coding');
-userdata.addhobby('golf');
-userdata.addhobby('hiking');
-
-userdata.printhobbies();
-// userdata.printage();
-
-// userdata.havebirthday();
-
-// userdata.printage();
+});
